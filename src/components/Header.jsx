@@ -15,7 +15,6 @@ export default function Header() {
           <Link to="/category/phim-bo">Phim Bộ</Link>
           <Link to="/genres">Thể Loại</Link>
           <Link to="/countries">Quốc Gia</Link>
-          <Link to="/years">Năm Phát Hành</Link>
         </nav>
         <SearchBar />
       </div>

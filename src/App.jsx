@@ -8,8 +8,6 @@ import Genres from "./pages/Genres";
 import GenreMovies from "./pages/GenreMovies";
 import Countries from "./pages/Countries";
 import CountryMovies from "./pages/CountryMovies";
-import Years from "./pages/Years";
-import YearMovies from "./pages/YearMovies";
 import "./App.css";
 
 function App() {
@@ -27,8 +25,6 @@ function App() {
             <Route path="/genre/:slug" element={<GenreMovies />} />
             <Route path="/countries" element={<Countries />} />
             <Route path="/country/:slug" element={<CountryMovies />} />
-            <Route path="/years" element={<Years />} />
-            <Route path="/year/:year" element={<YearMovies />} />
           </Routes>
         </main>
         <footer className="footer">
