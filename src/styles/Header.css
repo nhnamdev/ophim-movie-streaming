@@ -1,0 +1,111 @@
+.header {
+  background-color: rgba(20, 20, 20, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: clamp(12px, 1.5vh, 16px) 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+  box-sizing: border-box;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 2vw, 24px);
+  max-width: 100%;
+}
+
+.logo h1 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: clamp(16px, 2.5vw, 32px);
+  align-items: center;
+}
+
+.nav a {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  transition: var(--transition);
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--text-color);
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    gap: 20px;
+    font-size: 0.9rem;
+  }
+
+  .nav a {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header .container {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav a {
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .search-container {
+    max-width: 200px;
+  }
+}
